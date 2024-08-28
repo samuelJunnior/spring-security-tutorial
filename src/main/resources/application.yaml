@@ -43,3 +43,9 @@ spring:
     level:
       root: info
       br: debug
+
+jwt:
+  public:
+    key: classpath:app.pub
+  private:
+    key: classpath:app.key
