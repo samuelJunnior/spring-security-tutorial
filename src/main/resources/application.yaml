@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: @project.artifactId@
+
+  datasource:
+    continue-on-error: true
+    url: jdbc:postgresql://localhost:5432/sauths_db
+    platform: postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  liquibase:
+    enabled: false #ativar quando incluir os scripts
+    change-log: classpath:db/changelog/master.xml
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+
+  mail:
+    host: localhost
+    port: 1025
+    properties:
+      mail:
+        smtp:
+          debug: true
+          starttls:
+            enable: true
+    test-connection: false
+
+  logging:
+    level:
+      root: info
+      br: debug
