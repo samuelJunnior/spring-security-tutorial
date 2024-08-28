@@ -15,14 +15,14 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
         format_sql: true
 
   liquibase:
-    enabled: false #ativar quando incluir os scripts
+    enabled: true
     change-log: classpath:db/changelog/master.xml
     url: ${spring.datasource.url}
     user: ${spring.datasource.username}
