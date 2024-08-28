@@ -49,3 +49,8 @@ jwt:
     key: classpath:app.pub
   private:
     key: classpath:app.key
+
+admin:
+  username: admin
+  password: 123
+  email: emailadmin@gmail.com
