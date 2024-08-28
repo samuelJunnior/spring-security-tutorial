@@ -1,4 +1,4 @@
-package br.com.samueljunnior.config;
+package br.com.samueljunnior.core.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

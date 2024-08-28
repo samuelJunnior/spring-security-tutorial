@@ -1,4 +1,4 @@
-package br.com.samueljunnior.config;
+package br.com.samueljunnior.core.config;
 
 import br.com.samueljunnior.modules.accesscontrol.enums.RoleValuesEnum;
 import br.com.samueljunnior.modules.accesscontrol.repository.RoleRepository;
@@ -17,7 +17,7 @@ import java.util.Set;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class LoadUserAdmins implements CommandLineRunner {
+public class LoadAdminisConfig implements CommandLineRunner {
 
     @Value("${admin.username}")
     private String adminUsername;
