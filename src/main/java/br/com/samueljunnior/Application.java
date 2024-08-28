@@ -1,6 +1,6 @@
 package br.com.samueljunnior;
 
-import br.com.samueljunnior.configs.LogFooter;
+import br.com.samueljunnior.config.LogFooter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
