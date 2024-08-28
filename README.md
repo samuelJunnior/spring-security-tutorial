@@ -45,6 +45,20 @@ docker compose up -d
 ```
 Serão criados os containers para utilização do banco postgres e mailhog.
 
+É preciso realizar a criação de chave pública e privada.
+Estou utilizando Linux, caso também esteja, excutar os comando abaixo para criação das keys.
+
+Chave publica:
+```bash
+ openssl genrsa > app.key
+```
+
+Chave privada:
+```bash
+ openssl rsa -in app.key -pubout -out app.pub
+```
+Caso já tenha suas chaves criadas, apenas atualizar as configurações no arquivp [`application.yaml`](/application.yaml)
+
 ## 🚀 Build e Execução local
 
 Para gerar a versão executável do projeto com a extensão .jar é necessário executar o comando abaixo no diretório raiz:
