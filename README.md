@@ -21,12 +21,10 @@
 
 ### Desenvolvimento
 * Versionamento e hospedágem de código com `Git` / [`Github`](https://github.com/samuelJunnior/tutorial-spring-security)
-* Fluxo de trabalho com `GitFlow`.
 * Banco de dados relacional `Postgres`.
 * Versionamento do banco com `Liquibase`.
 * Produtividade com `Lombook` e `MapStruct`.
 * Documentação com `OpenApi/Swagger`.
-* Envio de e-mail com `Spring Boot Starter Mail`
 * Autorização e Autenticação com `Spring Security`, `Oauth2` e `JWT`.
 
 ## 💻 Pré-requisitos

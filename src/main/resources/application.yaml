@@ -45,6 +45,7 @@ spring:
       br: debug
 
 jwt:
+  expiresIn: 300
   public:
     key: classpath:app.pub
   private:
