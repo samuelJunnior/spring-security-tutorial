@@ -2,6 +2,7 @@ package br.com.samueljunnior.modules.accesscontrol.service;
 
 import br.com.samueljunnior.modules.accesscontrol.dto.LoginRequestDTO;
 import br.com.samueljunnior.modules.accesscontrol.dto.LoginResponseDTO;
+import br.com.samueljunnior.modules.accesscontrol.entity.RoleEntity;
 import br.com.samueljunnior.modules.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +14,7 @@ import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -32,6 +34,10 @@ public class TokenService {
             throw new BadCredentialsException("Invalid password!");
         }
 
+        final var scopes = user.getRoles().stream()
+                .map(RoleEntity::getName)
+                .collect(Collectors.joining(" "));
+
         final var now = Instant.now();
         final var expiresIn = 300L;
         final var claims = JwtClaimsSet.builder()
@@ -39,6 +45,7 @@ public class TokenService {
                 .subject(user.getId().toString())
                 .expiresAt(now.plusSeconds(expiresIn))
                 .issuedAt(now)
+                .claim("scope", scopes)
                 .build();
 
         final var jwtValue = jwtEncoder

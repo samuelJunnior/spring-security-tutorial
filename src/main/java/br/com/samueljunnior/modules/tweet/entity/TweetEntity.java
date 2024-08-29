@@ -1,9 +1,8 @@
-package br.com.samueljunnior.modules.examples.entity;
+package br.com.samueljunnior.modules.tweet.entity;
 
 import br.com.samueljunnior.modules.user.entity.UserEntity;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
@@ -12,6 +11,9 @@ import java.time.Instant;
 @Table(name = "tb_tweet")
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class TweetEntity {
 
     public static final String TWEET_ID = "id_tweet";
